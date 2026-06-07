@@ -142,7 +142,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',       // Resend sandbox sender
-      to:   'nicolas@enteintelligence.com',
+      to:   'nicolasortiz@enteintelligence.com',
       replyTo: email.trim(),               // Replying goes directly to the prospect
       subject: `New inquiry from ${name.trim()}${company?.trim() ? ` — ${company.trim()}` : ''}`,
       html,
