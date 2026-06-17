@@ -1,30 +1,26 @@
 import { useLanguage } from '../context/LanguageContext'
+import Logo from './Logo'
 
 export default function Footer() {
   const { t } = useLanguage()
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface-0 border-t border-border py-12">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-anchor border-t border-white/10 py-14">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-5 h-5 border border-gold flex items-center justify-center shrink-0">
-              <div className="w-2 h-2 bg-gold group-hover:bg-gold-light transition-colors" />
-            </div>
-            <span className="text-off-white text-sm font-semibold tracking-[0.16em] uppercase">
-              Ente Intelligence
-            </span>
+          <a href="#" className="flex items-center cursor-pointer" aria-label="Ente Intelligence — home">
+            <Logo markClass="h-10" enteClass="text-[16px]" intoClass="text-[8px]" />
           </a>
 
           {/* Nav */}
-          <nav className="flex flex-wrap gap-6">
+          <nav className="flex flex-wrap gap-x-7 gap-y-2">
             {t.footer.links.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
-                className="text-muted hover:text-off-white text-xs tracking-wide transition-colors"
+                className="text-on-dark-muted hover:text-on-dark text-xs tracking-wide transition-colors cursor-pointer"
               >
                 {label}
               </a>
@@ -32,7 +28,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <div className="text-muted text-xs tracking-wide">
+          <div className="text-on-dark-muted/70 text-xs tracking-wide">
             © {year} Ente Intelligence
           </div>
         </div>

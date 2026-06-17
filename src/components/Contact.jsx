@@ -43,33 +43,34 @@ export default function Contact() {
   }
 
   const inputClass =
-    'bg-surface-1 border border-border text-off-white text-sm px-4 py-3 focus:outline-none focus:border-gold transition-colors placeholder:text-muted w-full'
+    'bg-white/[0.04] border border-white/15 text-on-dark text-sm px-4 py-3 focus:outline-none focus:border-bronze transition-colors placeholder:text-on-dark-muted/50 w-full'
 
   return (
-    <section id="contact" className="bg-surface-1 py-28 md:py-36 border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center gap-4 mb-20">
-          <span className="text-muted text-xs tracking-[0.22em] uppercase shrink-0">{c.label}</span>
-          <div className="flex-1 h-px bg-border" />
+    <section id="contact" className="bg-anchor py-24 md:py-36">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Section label */}
+        <div className="flex items-center gap-4 mb-16 md:mb-20">
+          <span className="text-bronze-light text-xs tracking-[0.24em] uppercase shrink-0">{c.label}</span>
+          <div className="flex-1 h-px bg-white/10" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-off-white tracking-tight leading-tight mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-medium text-on-dark tracking-[-0.01em] leading-[1.1] mb-6">
               {c.headlineA}<br />{c.headlineB}
             </h2>
-            <p className="text-muted text-lg leading-relaxed mb-12">
+            <p className="text-on-dark-muted text-base md:text-lg leading-relaxed mb-12 max-w-md">
               {c.sub}
             </p>
 
             <div className="space-y-8">
               {c.promises.map(({ title, body }) => (
                 <div key={title} className="flex gap-4">
-                  <div className="w-1.5 h-1.5 bg-gold mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 bg-bronze mt-2 shrink-0" />
                   <div>
-                    <div className="text-off-white font-medium text-sm mb-1">{title}</div>
-                    <div className="text-muted text-sm leading-relaxed">{body}</div>
+                    <div className="text-on-dark font-medium text-sm mb-1">{title}</div>
+                    <div className="text-on-dark-muted text-sm leading-relaxed">{body}</div>
                   </div>
                 </div>
               ))}
@@ -77,14 +78,16 @@ export default function Contact() {
           </div>
 
           {/* Right: form */}
-          <div className="border border-border bg-surface-2 p-8">
+          <div className="border border-white/10 bg-white/[0.02] p-8 lg:p-10">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center py-16 text-center">
-                <div className="w-10 h-10 border border-gold flex items-center justify-center mb-6">
-                  <span className="text-gold text-lg leading-none">✓</span>
+                <div className="w-10 h-10 border border-bronze flex items-center justify-center mb-6">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8.5l3.2 3.2L13 4.5" stroke="#c0a062" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
-                <h3 className="text-off-white font-semibold text-lg mb-2">{c.success.heading}</h3>
-                <p className="text-muted text-sm">{c.success.body}</p>
+                <h3 className="font-serif text-on-dark font-medium text-xl mb-2">{c.success.heading}</h3>
+                <p className="text-on-dark-muted text-sm">{c.success.body}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -106,10 +109,11 @@ export default function Contact() {
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-muted text-xs tracking-widest uppercase">
-                      {c.fields.name} <span className="text-gold">*</span>
+                    <label htmlFor="name" className="text-on-dark-muted text-xs tracking-widest uppercase">
+                      {c.fields.name} <span className="text-bronze-light">*</span>
                     </label>
                     <input
+                      id="name"
                       type="text"
                       name="name"
                       required
@@ -120,10 +124,11 @@ export default function Contact() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-muted text-xs tracking-widest uppercase">
-                      {c.fields.email} <span className="text-gold">*</span>
+                    <label htmlFor="email" className="text-on-dark-muted text-xs tracking-widest uppercase">
+                      {c.fields.email} <span className="text-bronze-light">*</span>
                     </label>
                     <input
+                      id="email"
                       type="email"
                       name="email"
                       required
@@ -138,8 +143,9 @@ export default function Contact() {
                 {/* Company + Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-muted text-xs tracking-widest uppercase">{c.fields.company}</label>
+                    <label htmlFor="company" className="text-on-dark-muted text-xs tracking-widest uppercase">{c.fields.company}</label>
                     <input
+                      id="company"
                       type="text"
                       name="company"
                       value={form.company}
@@ -149,8 +155,9 @@ export default function Contact() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-muted text-xs tracking-widest uppercase">{c.fields.phone}</label>
+                    <label htmlFor="phone" className="text-on-dark-muted text-xs tracking-widest uppercase">{c.fields.phone}</label>
                     <input
+                      id="phone"
                       type="tel"
                       name="phone"
                       value={form.phone}
@@ -163,12 +170,13 @@ export default function Contact() {
 
                 {/* Industry */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-muted text-xs tracking-widest uppercase">{c.fields.industry}</label>
+                  <label htmlFor="industry" className="text-on-dark-muted text-xs tracking-widest uppercase">{c.fields.industry}</label>
                   <select
+                    id="industry"
                     name="industry"
                     value={form.industry}
                     onChange={handleChange}
-                    className={inputClass + ' appearance-none'}
+                    className={inputClass + ' appearance-none cursor-pointer'}
                   >
                     <option value="" disabled>{c.fields.industryDefault}</option>
                     {c.industryOptions.map(opt => (
@@ -179,10 +187,11 @@ export default function Contact() {
 
                 {/* Message */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-muted text-xs tracking-widest uppercase">
-                    {c.fields.message} <span className="text-gold">*</span>
+                  <label htmlFor="message" className="text-on-dark-muted text-xs tracking-widest uppercase">
+                    {c.fields.message} <span className="text-bronze-light">*</span>
                   </label>
                   <textarea
+                    id="message"
                     name="message"
                     required
                     rows={5}
@@ -195,7 +204,7 @@ export default function Contact() {
 
                 {/* Server error */}
                 {status === 'error' && (
-                  <p className="text-sm text-gold border border-gold/30 bg-gold/5 px-4 py-3">
+                  <p className="text-sm text-bronze-light border border-bronze/40 bg-bronze/10 px-4 py-3">
                     {errorMsg}
                   </p>
                 )}
@@ -203,7 +212,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full py-4 bg-gold text-surface-0 text-xs font-semibold tracking-widest uppercase hover:bg-gold-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-bronze text-ink text-xs font-semibold tracking-widest uppercase hover:bg-bronze-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {status === 'submitting' ? c.fields.submitting : c.fields.submit}
                 </button>

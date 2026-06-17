@@ -77,6 +77,11 @@ export const translations = {
           title: "Advisory & Strategy",
           body: "Beyond the data — we help you interpret findings and translate insights into action. We stay engaged as your business evolves.",
         },
+        {
+          id: "07",
+          title: "Web Design",
+          body: "Premium, fast websites that present your business with the same clarity and authority as your data. We design, build, and launch — fully managed, end to end.",
+        },
       ],
     },
 
@@ -116,37 +121,42 @@ export const translations = {
           title: "Municipalities",
           body: "Budget vs. actual reporting, department-level dashboards, and public accountability metrics for government entities.",
         },
+        {
+          tag: "Food & Hospitality",
+          title: "Food & Service",
+          body: "Menu and location profitability, labor and food-cost tracking, and sales dashboards for restaurants, hospitality, and food service businesses.",
+        },
       ],
     },
 
     process: {
       label: "How It Works",
-      headlineA: "A Structured Path from",
-      headlineB: "Data Chaos to Clarity",
+      headlineA: "A Clear Path",
+      headlineB: "From Chaos to Clarity",
       items: [
         {
           n: "01",
           title: "Discover",
-          body: "We audit your current data sources, tools, and reporting gaps. You walk us through how decisions get made today — and where clarity breaks down.",
-          tags: ["Current-state assessment", "Data source inventory", "Stakeholder interviews"],
+          body: "First we learn how your business really runs — your data, your tools, your website, and where things slow down. You show us how decisions get made today.",
+          tags: ["Where you stand today", "Your data and tools", "What's slowing you down"],
         },
         {
           n: "02",
           title: "Design",
-          body: "We define your KPIs, reporting architecture, and dashboard structure. Every metric is mapped to a specific business outcome before a single line is built.",
-          tags: ["KPI framework", "Dashboard wireframes", "Data model design"],
+          body: "Next we plan exactly what to build — the dashboards, reports, or website — and which numbers and pages matter most. Everything is mapped out before we build it.",
+          tags: ["A clear plan", "The metrics that matter", "Layout and structure"],
         },
         {
           n: "03",
           title: "Build",
-          body: "We connect your systems, normalize your data, and build the dashboards and reports your leadership team will actually use — and trust.",
-          tags: ["System integration", "Dashboard development", "QA & validation"],
+          body: "Then we connect your systems and build the dashboards, reports, or website your team will actually use — testing everything so it simply works.",
+          tags: ["We connect your systems", "We build it", "We test it"],
         },
         {
           n: "04",
-          title: "Deploy & Sustain",
-          body: "We deliver, train your team, and stay available for iteration. Your data infrastructure is built to evolve alongside your business.",
-          tags: ["User training", "Documentation", "Ongoing refinement"],
+          title: "Launch & Support",
+          body: "Finally we launch it, show your team how to use it, and stay close to keep improving it as your business grows.",
+          tags: ["Launch", "Team training", "Ongoing support"],
         },
       ],
     },
@@ -154,12 +164,14 @@ export const translations = {
     outcomes: {
       label: "The Result",
       headlineA: "What Changes When",
-      headlineB: "Your Data Works",
+      headlineB: "Your Systems Work",
       stats: [
         { value: "90%",    label: "Reduction in manual data consolidation time" },
         { value: "4x",     label: "Faster reporting cycles post-deployment" },
         { value: "100%",   label: "Of clients report improved decision confidence" },
         { value: "<12 wk", label: "From kickoff to live dashboards, on average" },
+        { value: "+63%",   label: "Growth in qualified web traffic after a redesign" },
+        { value: "99.9%",  label: "Secure uptime on the sites and tools we build" },
       ],
       items: [
         {
@@ -179,8 +191,8 @@ export const translations = {
 
     about: {
       label: "About Ente Intelligence",
-      headlineA: "Built by Operators,",
-      headlineB: "for Operators",
+      headlineA: "Grounded, Practical,",
+      headlineB: "Built to Last.",
       p1: "Ente Intelligence was founded to close the gap between the business intelligence tools available to enterprise companies and the data chaos experienced by most growing businesses.",
       p2: "We bring institutional-grade analytics and reporting discipline to medical practices, construction firms, distributors, and service businesses — the organizations that form the backbone of the real economy.",
       p3: "Our work is practical, grounded, and built to last. We don't sell dashboards — we build decision infrastructure.",
@@ -332,6 +344,11 @@ export const translations = {
           title: "Consultoria y Estrategia",
           body: "Mas alla de los datos — te ayudamos a interpretar hallazgos y convertir insights en accion. Permanecemos comprometidos a medida que tu negocio evoluciona.",
         },
+        {
+          id: "07",
+          title: "Diseno Web",
+          body: "Sitios web premium y veloces que presentan tu empresa con la misma claridad y autoridad que tus datos. Disenamos, construimos y lanzamos — totalmente gestionado, de principio a fin.",
+        },
       ],
     },
 
@@ -371,37 +388,42 @@ export const translations = {
           title: "Municipios",
           body: "Reportes de presupuesto versus real, dashboards por departamento y metricas de rendicion de cuentas publica para entidades gubernamentales.",
         },
+        {
+          tag: "Comida y Hospitalidad",
+          title: "Comida y Servicio",
+          body: "Rentabilidad por menu y por local, control de costos de personal e insumos, y dashboards de ventas para restaurantes, hospitalidad y servicios de comida.",
+        },
       ],
     },
 
     process: {
       label: "Como Funciona",
-      headlineA: "Un Camino Estructurado del",
-      headlineB: "Caos de Datos a la Claridad",
+      headlineA: "Un Camino Claro",
+      headlineB: "del Caos a la Claridad",
       items: [
         {
           n: "01",
           title: "Diagnostico",
-          body: "Auditamos tus fuentes de datos actuales, herramientas y brechas en reportes. Nos describes como se toman las decisiones hoy — y donde se pierde la claridad.",
-          tags: ["Evaluacion del estado actual", "Inventario de fuentes de datos", "Entrevistas con partes interesadas"],
+          body: "Primero conocemos como funciona tu negocio de verdad: tus datos, tus herramientas, tu sitio web y donde se traban las cosas. Tu nos muestras como se toman hoy las decisiones.",
+          tags: ["Donde estas hoy", "Tus datos y herramientas", "Que te esta frenando"],
         },
         {
           n: "02",
           title: "Diseno",
-          body: "Definimos tus KPIs, arquitectura de reportes y estructura de dashboards. Cada metrica se vincula a un resultado de negocio concreto antes de construir nada.",
-          tags: ["Marco de KPIs", "Wireframes de dashboards", "Diseno del modelo de datos"],
+          body: "Despues planeamos exactamente que construir — los dashboards, reportes o el sitio web — y que numeros y paginas importan mas. Todo se mapea antes de construirlo.",
+          tags: ["Un plan claro", "Las metricas que importan", "Estructura y diseno"],
         },
         {
           n: "03",
           title: "Construccion",
-          body: "Conectamos tus sistemas, normalizamos tus datos y construimos los dashboards y reportes que tu equipo de liderazgo realmente utilizara — y en los que confiara.",
-          tags: ["Integracion de sistemas", "Desarrollo de dashboards", "Control de calidad y validacion"],
+          body: "Luego conectamos tus sistemas y construimos los dashboards, reportes o el sitio web que tu equipo de verdad usara, probando todo para que simplemente funcione.",
+          tags: ["Conectamos tus sistemas", "Lo construimos", "Lo probamos"],
         },
         {
           n: "04",
-          title: "Implementacion",
-          body: "Entregamos, capacitamos a tu equipo y permanecemos disponibles para iteraciones. Tu infraestructura de datos esta disenada para evolucionar junto con tu negocio.",
-          tags: ["Capacitacion de usuarios", "Documentacion", "Refinamiento continuo"],
+          title: "Lanzamiento y Soporte",
+          body: "Por ultimo lo lanzamos, le ensenamos a tu equipo a usarlo y nos quedamos cerca para seguir mejorandolo a medida que tu negocio crece.",
+          tags: ["Lanzamiento", "Capacitacion del equipo", "Soporte continuo"],
         },
       ],
     },
@@ -409,12 +431,14 @@ export const translations = {
     outcomes: {
       label: "El Resultado",
       headlineA: "Que Cambia Cuando",
-      headlineB: "Tus Datos Funcionan",
+      headlineB: "Tus Sistemas Funcionan",
       stats: [
         { value: "90%",     label: "Reduccion en tiempo de consolidacion manual de datos" },
         { value: "4x",      label: "Ciclos de reporte mas rapidos tras la implementacion" },
         { value: "100%",    label: "De los clientes reportan mayor confianza en sus decisiones" },
         { value: "<12 sem", label: "Del inicio del proyecto a dashboards en vivo, en promedio" },
+        { value: "+63%",    label: "Crecimiento del trafico web calificado tras un rediseno" },
+        { value: "99.9%",   label: "Disponibilidad segura en los sitios y herramientas que creamos" },
       ],
       items: [
         {
@@ -434,8 +458,8 @@ export const translations = {
 
     about: {
       label: "Sobre Ente Intelligence",
-      headlineA: "Creado por Operadores,",
-      headlineB: "para Operadores",
+      headlineA: "Practicos y Solidos,",
+      headlineB: "Construidos para Durar.",
       p1: "Ente Intelligence fue fundada para cerrar la brecha entre las herramientas de inteligencia de negocios disponibles para grandes corporaciones y el caos de datos que enfrentan la mayoria de las empresas en crecimiento.",
       p2: "Llevamos analitica y disciplina de reportes de nivel institucional a practicas medicas, constructoras, distribuidores y empresas de servicios — las organizaciones que forman el pilar de la economia real.",
       p3: "Nuestro trabajo es practico, fundamentado y construido para durar. No vendemos dashboards — construimos infraestructura para la toma de decisiones.",

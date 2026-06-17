@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* --- Legacy dark tokens (still used by sections not yet rebuilt) --- */
   --color-surface-0: #080808;
   --color-surface-1: #0d0d0d;
   --color-surface-2: #161616;
@@ -13,23 +14,79 @@
   --color-off-white: #f0ede8;
   --color-muted: #6b6560;
   --color-muted-light: #8a8580;
+
+  /* --- Editorial overhaul palette (Blackstone-inspired, hybrid leaning light) --- */
+  --color-ivory: #f6f3ec;        /* warm paper ground */
+  --color-ivory-deep: #efe9dd;   /* slightly recessed ivory for alternating bands */
+  --color-ink: #16150f;          /* near-black headline/body */
+  --color-warm-gray: #6b655b;    /* sub-copy on light */
+  --color-warm-gray-light: #8c857a;
+  --color-bronze: #9a7b3f;       /* refined accent (dialed back from old gold) */
+  --color-bronze-light: #c0a062; /* lighter bronze for use on dark */
+  --color-anchor: #14130f;       /* deep dark anchor sections (Hero / final CTA) */
+  --color-hairline: #e0dace;     /* thin editorial rules on light */
+  --color-on-dark: #f6f3ec;      /* text on anchor sections */
+  --color-on-dark-muted: #b8b1a3;
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: #080808;
-  color: #f0ede8;
+  background-color: #f6f3ec;
+  color: #16150f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
 
 ::selection {
-  background-color: #b89a5c33;
-  color: #f0ede8;
+  background-color: #9a7b3f33;
+  color: #f6f3ec;
+}
+
+/* --- Motion system --------------------------------------------------------
+   Lightweight, transform/opacity only. Hero cascades in on load via a
+   parent [data-loaded]; scroll sections reveal via [data-visible] toggled
+   by an IntersectionObserver hook. Fully disabled under reduced motion. */
+
+.hero-rise {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+[data-loaded='true'] .hero-rise {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal][data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-rise,
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
