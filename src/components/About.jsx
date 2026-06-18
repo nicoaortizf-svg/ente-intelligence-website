@@ -6,7 +6,7 @@ export default function About() {
   const a = t.about
 
   return (
-    <section id="about" className="bg-ivory-deep py-24 md:py-36">
+    <section id="about" className="bg-ivory py-24 md:py-36">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section label */}
         <Reveal className="flex items-center gap-4 mb-16 md:mb-20">
